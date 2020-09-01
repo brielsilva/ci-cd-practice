@@ -1,6 +1,6 @@
 ## How to use
 -npm i
--npm run test-integration
+-npm test
 
 ## What is
 
@@ -10,4 +10,5 @@ For now only integration tests are present, in the future will be added unit tes
 ## What tech was used
 Test Runner: Mocha
 Assert: Chai
-Suport: Supertest
+Suport: Supertest,Joi
+Auth: passport passport-jwt jwt-simple
