@@ -44,7 +44,6 @@ describe('Controllers: Movies',() => {
             const movie = new MovieController(Movies);
             return movie.getById({id:1})
                 .then(response => {
-                    console.log(response);
                     return expect(response.data).to.be.eql(expectedResponse)
                 });
         })

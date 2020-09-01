@@ -1,9 +1,11 @@
-const defaultResponse = (data,statusCode = 200) => ({
+import httpStatus from 'http-status'
+
+const defaultResponse = (data,statusCode = httpStatus.OK) => ({
     data,
     statusCode
 })
 
-const errorResponse = (message,statusCode = 400) => defaultResponse({
+const errorResponse = (message,statusCode = httpStatus.BAD_REQUEST) => defaultResponse({
     error: message
 },statusCode)
         // Fazendo o teste passar enquanto isolado
@@ -22,14 +24,14 @@ class MovieController{
     }
 
     create(body){
-        return this.Movie.create(body).then(data => defaultResponse(data,201)).catch(err => errorResponse(err.message,422));
+        return this.Movie.create(body).then(data => defaultResponse(data,httpStatus.CREATED)).catch(err => errorResponse(err.message,httpStatus.UNPROCESSABLE_ENTITY));
     }
 
     update(body,params){
-        return this.Movie.update(body,{where: params}).then(data => defaultResponse(data,201)).catch(err => errorResponse(err.message,422));
+        return this.Movie.update(body,{where: params}).then(data => defaultResponse(data,httpStatus.CREATED)).catch(err => errorResponse(err.message,httpStatus.UNPROCESSABLE_ENTITY));
     }
     delete(params){
-        return this.Movie.destroy({where: params}).then(data => defaultResponse(data,204)).catch(err => errorResponse(err.message,422));
+        return this.Movie.destroy({where: params}).then(data => defaultResponse(data,httpStatus.NO_CONTENT)).catch(err => errorResponse(err.message,httpStatus.UNPROCESSABLE_ENTITY));
     }
 }
 

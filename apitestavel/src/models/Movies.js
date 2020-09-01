@@ -13,3 +13,4 @@ class Movie extends Model {
 
 
 export default Movie
+
