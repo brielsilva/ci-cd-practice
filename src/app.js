@@ -5,6 +5,7 @@ const authRoutes = require('./routes/Auth');
 import config from './config/config';
 import auth from '../auth';
 import { initialize } from 'passport';
+//require('./models');
 require('./database');
 
 
@@ -24,9 +25,13 @@ class App{
     }
 
     routes(){
-        this.app.use('/movies',this.auth.authenticate(),movies);
+        this.app.use('/movies',movies);
         this.app.use('/users',users)
         this.app.use('/token',authRoutes)
+    }
+
+    init() {
+
     }
 }
 

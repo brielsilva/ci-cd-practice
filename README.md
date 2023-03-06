@@ -1,14 +1,11 @@
-## How to use
--npm i
--npm test
+# What is this repo?
 
-## What is
+I am looking to use this code of a old repo of my to apply CI/CD.
 
-Simple CRUD operations that pass a test that verify behavior.
-For now only integration tests are present, in the future will be added unit test and contract test
+## What is this API?
 
-## What tech was used
-Test Runner: Mocha
-Assert: Chai
-Suport: Supertest,Joi
-Auth: passport passport-jwt jwt-simple
+Been so long that i don't remember, i only tweek to make running again.
+
+## Why use a old repo instead of building one?
+
+My ideia here is only to apply concepts of CI/CD, with jenkis, github actions e etc, this is not about the code, i am only using this code because it have some testing done, i am running this image with nodemon, really, avoid copying this code, only look at CI/CD.

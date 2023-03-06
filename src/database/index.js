@@ -6,8 +6,8 @@ import Users from '../models/Users';
 const connection = new Sequelize(config);
 
 const models = [Users,Movie]; 
-/* Movies.init(connection)
-Users.init(connection); */
+Movie.init(connection)
+Users.init(connection); 
 
 models.forEach(model => model.init(connection))
 export default connection
